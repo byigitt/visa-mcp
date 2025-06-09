@@ -2,9 +2,16 @@
   "name": "visa-mcp",
   "version": "1.0.1",
   "description": "Schengen Visa MCP Server",
-  "main": "index.js",
+  "main": "dist/server.js",
+  "bin": {
+    "visa-mcp": "dist/server.js"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "ts-node src/server.ts",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,6 +20,8 @@
   "packageManager": "pnpm@10.11.0",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",
+    "@types/express": "^5.0.3",
+    "express": "^5.1.0",
     "zod": "^3.25.56"
   },
   "devDependencies": {
