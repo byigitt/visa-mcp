@@ -1,5 +1,8 @@
 # 🔍 Vize Randevu Durumu MCP Sunucusu
 
+[![Install in Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=visa-mcp&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsInZpc2EtbWNwIl19)
+[<img alt="Install in VS Code (npx)" src="https://img.shields.io/badge/VS_Code-VS_Code?style=flat-square&label=Install%20visa-mcp%20MCP&color=0098FF">](https://insiders.vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%7B%22name%22%3A%22visa-mcp%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22visa-mcp%40latest%22%5D%7D)
+
 Bu proje, Schengen ve diğer vize randevu durumlarını `https://api.visasbot.com/api/visa/list` API'si üzerinden sorgulamak için araçlar sunan bir Model Context Protocol (MCP) sunucusudur.
 
 ## 📋 Özellikler
@@ -12,29 +15,74 @@ Bu proje, Schengen ve diğer vize randevu durumlarını `https://api.visasbot.co
 - 📄 Vize türüne göre filtreleme (`get_visas_by_visa_type`)
 - 📍 Başvuru merkezine göre filtreleme (`get_visas_by_center`)
 
-## 🛠️ Kurulum
+## 🛠️ Yükleme
 
 ### Gereksinimler
 
-- Node.js (v16 veya üzeri)
-- pnpm paket yöneticisi
+- Node.js (v18 veya üzeri)
+- Cursor, Claude Desktop veya başka bir MCP İstemcisi
 
-### Projeyi Kurma
+<details>
+<summary><b>Cursor'a Yükle</b></summary>
 
-1.  Projeyi bilgisayarınıza indirin veya klonlayın:
+Aşağıdaki yapılandırmayı Cursor `~/.cursor/mcp.json` dosyanıza yapıştırmanız önerilir. Ayrıca, projenizin klasöründe `.cursor/mcp.json` oluşturarak belirli bir projeye de yükleyebilirsiniz. Daha fazla bilgi için [Cursor MCP belgelerine](https://docs.cursor.com/context/model-context-protocol) bakınız.
 
-    ```bash
-    git clone https://github.com/byigitt/visa-mcp.git
-    cd visa-mcp
-    ```
+```json
+{
+  "mcpServers": {
+    "visa-mcp": {
+      "command": "npx",
+      "args": ["-y", "visa-mcp"]
+    }
+  }
+}
+```
+</details>
 
-2.  Gerekli Node.js paketlerini yükleyin:
+<details>
+<summary><b>Claude Desktop'a Yükle</b></summary>
 
-    ```bash
-    pnpm install
-    ```
+Bu yapılandırmayı Claude Desktop `claude_desktop_config.json` dosyanıza ekleyin. Daha fazla bilgi için [Claude Desktop MCP belgelerine](https://modelcontextprotocol.io/quickstart/user) bakınız.
 
-## 🖥️ Sunucuyu Çalıştırma
+```json
+{
+  "mcpServers": {
+    "visa-mcp": {
+      "command": "npx",
+      "args": ["-y", "visa-mcp"]
+    }
+  }
+}
+```
+
+</details>
+
+
+<details>
+<summary><b>VS Code'a Yükle</b></summary>
+
+[<img alt="Install in VS Code (npx)" src="https://img.shields.io/badge/VS_Code-VS_Code?style=flat-square&label=Install%20visa-mcp%20MCP&color=0098FF">](https://insiders.vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%7B%22name%22%3A%22visa-mcp%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22visa-mcp%40latest%22%5D%7D)
+[<img alt="Install in VS Code Insiders (npx)" src="https://img.shields.io/badge/VS_Code_Insiders-VS_Code_Insiders?style=flat-square&label=Install%20visa-mcp%20MCP&color=24bfa5">](https://insiders.vscode.dev/redirect?url=vscode-insiders%3Amcp%2Finstall%3F%7B%22name%22%3A%22visa-mcp%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22visa-mcp%40latest%22%5D%7D)
+
+Bu yapılandırmayı VS Code MCP yapılandırma dosyanıza ekleyin. Daha fazla bilgi için [VS Code MCP belgelerine](https://code.visualstudio.com/docs/copilot/chat/mcp-servers) bakınız.
+
+#### VS Code Yerel Sunucu Bağlantısı
+
+```json
+"mcp": {
+  "servers": {
+    "visa-mcp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "visa-mcp"]
+    }
+  }
+}
+```
+
+</details>
+
+## 🖥️ Yerel Geliştirme için Sunucuyu Çalıştırma
 
 Sunucuyu başlatmak için aşağıdaki komutu çalıştırın:
 
