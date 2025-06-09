@@ -4,8 +4,8 @@ import { z } from "zod";
 import { fetchAndFilterVisas } from "./utils";
 
 const server = new McpServer({
-  name: "VisaApi",
-  version: "1.0.0",
+  name: "Schengen Visa MCP Server",
+  version: "1.0.1",
 });
 
 server.tool(
