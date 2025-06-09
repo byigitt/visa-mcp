@@ -44,6 +44,26 @@ pnpm start
 
 Sunucu başarıyla başladığında konsolda `MCP server started and listening on stdio.` mesajını görmelisiniz. Sunucu, standart girdi/çıktı (stdio) üzerinden MCP isteklerini dinlemeye başlayacaktır.
 
+## 🐳 Docker ile Çalıştırma
+
+Projeyi Docker kullanarak daha hızlı ve izole bir ortamda çalıştırabilirsiniz.
+
+1.  **Docker Image'ı Oluşturma:**
+
+    Projenin ana dizininde aşağıdaki komutu çalıştırarak Docker image'ını oluşturun:
+
+    ```bash
+    docker build -t visa-mcp-server .
+    ```
+
+2.  **Docker Container'ını Çalıştırma:**
+
+    Image oluşturulduktan sonra, aşağıdaki komutla container'ı interaktif modda (`-i`) çalıştırabilirsiniz. Bu, MCP sunucusunun `stdin` üzerinden iletişim kurmasını sağlar.
+
+    ```bash
+    docker run -i --rm visa-mcp-server
+    ```
+
 ## ⚙️ Araçlar (Tools)
 
 Sunucu, vize bilgilerini sorgulamak için aşağıdaki araçları sunar.

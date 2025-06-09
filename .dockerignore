@@ -1,0 +1,12 @@
+# Ignore dependencies
+node_modules
+
+# Ignore local development files
+.git
+.idea
+.vscode
+*.md
+
+# Ignore docker files
+Dockerfile
+.dockerignore 
