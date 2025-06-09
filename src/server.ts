@@ -2,8 +2,8 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import express from "express";
-import { registerRoutes } from "./registers/routes.js";
-import { registerTools } from "./registers/tools.js";
+import { registerRoutes } from "./registers/routes";
+import { registerTools } from "./registers/tools";
 
 async function main() {
   const server = new McpServer({

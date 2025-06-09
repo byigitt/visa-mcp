@@ -72,4 +72,18 @@ export function registerTools(server: McpServer) {
     { center: z.string().describe("The application center to filter by") },
     async ({ center }) => fetchAndFilterVisas({ center })
   );
+
+  server.tool(
+    "get_visas_by_country_and_mission",
+    {
+      country_code: z
+        .string()
+        .describe("The country code of application (e.g., 'tur', 'deu')"),
+      mission_code: z
+        .string()
+        .describe("The destination country (mission) code (e.g., 'nld', 'gbr')"),
+    },
+    async ({ country_code, mission_code }) =>
+      fetchAndFilterVisas({ country_code, mission_code })
+  );
 } 
