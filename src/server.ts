@@ -8,7 +8,7 @@ import { registerTools } from "./registers/tools";
 async function main() {
   const server = new McpServer({
     name: "Schengen Visa MCP Server",
-    version: "1.0.2",
+    version: "1.0.3",
   });
 
   registerTools(server);
