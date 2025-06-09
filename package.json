@@ -1,6 +1,6 @@
 {
   "name": "visa-mcp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Schengen Visa MCP Server",
   "main": "dist/server.js",
   "bin": {
